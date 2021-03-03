@@ -4,8 +4,9 @@ using namespace std;
 
 int main()
 {
-  int i = 10;
-  float j = 20.45;
-  float result = j/i;
-  cout << result;
+  int x,y,z;
+  x=7;
+  y=10;
+  z=x<y;
+  cout <<z<<endl;
 }
