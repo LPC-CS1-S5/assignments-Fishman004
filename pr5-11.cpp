@@ -5,7 +5,7 @@ int main(){
   int i = 0;
   int n;
   bool isprime = true;
-  while (i < 100) {
+  while (i <= 100) {
     i++;
     isprime = true;
     //cout << "i = " << i << "\n";
