@@ -20,6 +20,7 @@ struct Grade{
   string letterGrade;
 };
 
+void displayData(Grade*);
 
 Grade g[20];
 
@@ -82,17 +83,16 @@ int main(){
     
   }
   
+  displayData(g);
+}
+
+void displayData(Grade g){
   ofstream myfile2;
-  myfile2.open("grades.bin", ios::out|ios::binary);
-  //ofs.write()
-  i = 0;
+  myfile2.open("grades.bin", ios::binary);
+  int i = 0;
   while ( i < 17){
-    
-    myfile2.write(g[i].first, 8);
-    myfile2.write("\n", 4);
-    myfile2.write(g[i].last, 8)
-    myfile2.write("\n", 4);
-    myfile2.write(g[i])
+    cout << setw(8) << g[i].first << "\n";
+    cout << setw(8) << g[i].last << "\n";
     cout << setw(11) << g[i].ssn << "\n";
     cout << setw(4) << g[i].score.grade1 << "\n";
     cout << setw(4) << g[i].score.grade2 << "\n";
@@ -102,4 +102,7 @@ int main(){
     cout << setw(3) << g[i].letterGrade << "\n";
     i++;
   }
+  
+
 }
+//I was able to make the program read in the data from the grades.txt file, parse it into the structure, and then create the binary file. When moving it to the void function, the code would give the error subscript not provided by Grade, which was strange because I declared it in the function itself. So other than that I did not have any issues but the actual writing of the code to the file I could not seem to get to work. 
